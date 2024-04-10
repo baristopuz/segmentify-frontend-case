@@ -6,6 +6,7 @@ class SegmentifyProductFilterify {
         };
         this.questions = [];
         this.products = [];
+        this.currency = '€';
         this.activeStep = 0;
         this.maxStep = null;
         this.isTheActiveQuestionAnswered = false;
@@ -192,9 +193,9 @@ class SegmentifyProductFilterify {
         html = `
         <div class="question-block" type="${type}" step="${step}">
             ${data.subtitle ? `<h2 class="question-subtitle">${data.subtitle}</h2>` : ''}
-            <h2 h2 class="question-title" > ${data.title}</h2 >
+            <h2 class="question-title" > ${data.title}</h2>
                 <div class="question-buttons">
-                    ${data.answers?.map(answer => `<button ${type == 'color' ? `color="${answer.toLowerCase()}"` : ''} type="button">${answer}</button>`).join('')}
+                    ${data.answers?.map(answer => `<button ${type == 'color' ? `color="${answer.toLowerCase()}"` : ''} type="button">${type == 'price' ? this.currency : ''}${answer}</button>`).join('')}
                 </div>
         </div >
             `;
