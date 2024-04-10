@@ -322,10 +322,12 @@ button.selected {
   height: 4px;
   background-color: #000;
   opacity: 0.2;
+  border-radius: 30px;
 }
 
 .question-steps .question-step-bullet.active {
   opacity: 1;
+  background-color: #757575;
 }
 
 .swiper-button-prev,
@@ -360,6 +362,16 @@ button.selected {
   }
 
   .product-card-button {
-    width: 75%;
+    display: 75%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .product-card-image img {
+    max-height: 250px;
+  }
+
+  .product-card-button {
+    display: none;
   }
 }
