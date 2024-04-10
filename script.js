@@ -218,7 +218,8 @@ class SegmentifyProductFilterify {
                     <div class="product-card-container">
                     <div class="product-card">
                         <div class="product-card-image">
-                            <img src="${product.image}" alt="" />
+                            <img loading="lazy" src="${product.image}" alt="" />
+                            <div class="swiper-lazy-preloader"></div>
                         </div>
                         <h2 class="product-card-title">${product.name}</h2>
                         ${product.oldPrice ? `<p class="product-card-price">${product.currency}${product.oldPrice}</p>` : ''}
@@ -278,6 +279,7 @@ class SegmentifyProductFilterify {
     initSwiper() {
         var swiper = new Swiper(".product-swiper", {
             spaceBetween: 40,
+            lazy: true,
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
